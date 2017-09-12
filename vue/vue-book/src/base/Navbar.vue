@@ -49,6 +49,8 @@
       flex-direction column
       align-items center
       justify-content center
+    .router-link-active
+      color #2aabd2
 
 </style>
 
