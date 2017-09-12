@@ -8,7 +8,8 @@
 </template>
 <script>
     import MHeader from '../base/MHeader.vue';
-    import Swiper from '../base/Swiper.vue'
+    import Swiper from '../base/Swiper.vue';
+    import axios from 'axios';
     export default {
         data(){
             return {
@@ -16,9 +17,16 @@
             }
         },
         created(){
+            this.getSliders();
         },
         components:{MHeader,Swiper},
-        methods: {},
+        methods: {
+            getSliders(){ //跨域 cors jsonp fetch 支持跨域
+              axios.get('/api/sliders').then(res=>{
+                  this.sliders = res.data;
+              });
+            }
+        },
         computed: {},
         mounted(){
         }

@@ -29,10 +29,6 @@
     }
 </script>
 <style scoped>
-  .swiper{width: 100%}
   .slider-item img{width: 100%}
-  .slider-item{
-    float: left;
-  }
 </style>
 

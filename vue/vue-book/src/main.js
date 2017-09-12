@@ -6,7 +6,8 @@ Vue.use(test);*/
 Vue.config.productionTip = false;
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 Vue.use(VueAwesomeSwiper);
-
+//导入swiper的样式
+import 'swiper/dist/css/swiper.min.css';
 
 /* eslint-disable no-new */
 new Vue({
