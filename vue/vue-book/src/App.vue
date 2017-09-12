@@ -1,22 +1,30 @@
 <template>
   <div id="app">
-    <my-button></my-button>
+    <router-view></router-view>
+    <navbar></navbar>
   </div>
 </template>
 
 <script>
+import Navbar from './base/Navbar.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components:{
+      Navbar
+  }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="stylus">
+  *
+    margin 0
+    padding 0
+    body,html
+      width 100%
+      height 100%
+      overflow hidden
+  ul,li
+    list-style none
+  a
+    text-decoration none
+    color #ccc
 </style>

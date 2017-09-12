@@ -37,3 +37,34 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 npm install axios bootstrap vuex --save
 ```
 
+
+## 插件的用法
+- 导出一个带有install方法的对象
+```
+export default {
+  install(Vue) {
+    Vue.component('my-button',{
+      render:h=>h('button','嗲我啊')
+    })
+  }
+}
+```
+- 可以在install方法中写一些全局的功能
+- 可以写一些全局的方法，或者组件在任意组件中使用
+- 通过use注册这个插件
+```
+import test from './test';
+Vue.use(test);
+```
+- 此时my-button组件可以在任何组件中使用
+```
+<my-button></my-button>
+```
+
+
+## 使用stylus
+```
+npm install stylus stylus-loader --save-dev
+```
+
+
