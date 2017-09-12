@@ -4,6 +4,9 @@ import router from './router';
 /*import test from './test'
 Vue.use(test);*/
 Vue.config.productionTip = false;
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper);
+
 
 /* eslint-disable no-new */
 new Vue({

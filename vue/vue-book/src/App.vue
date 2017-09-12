@@ -27,4 +27,11 @@ export default {
   a
     text-decoration none
     color #ccc
+  .scroll
+    position fixed
+    top 44px
+    bottom 60px
+    overflow-x hidden
+    overflow-y scroll
+    width 100%
 </style>
