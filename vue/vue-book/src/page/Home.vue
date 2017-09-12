@@ -1,6 +1,6 @@
 <template>
     <div>
-        <MHeader title="首页" :back="true"></MHeader>
+        <MHeader title="首页"></MHeader>
         <div class="scroll">
           <Swiper :data="sliders"></Swiper>
         </div>
