@@ -17,7 +17,7 @@ function write(data,callback) { //用来写入到json中的方法
 let sliders = require('./sliders');
 http.createServer(function (req,res) {
   let {pathname,query} = url.parse(req.url,true);
-  let id = query.id; //看路径后面是否有id
+  let id = parseInt(query.id); //看路径后面是否有id
   // 所有接口都以 /api开头  /api/sliders
   if(pathname === '/api/sliders'){
       res.end(JSON.stringify(sliders));
@@ -31,10 +31,13 @@ http.createServer(function (req,res) {
     switch(req.method){
       case 'GET': //查询一个返回对象 查询所有返回数组
         if(id){
-
+          read(function (books) {
+            let book = books.find(book=>book.id == id);
+            res.end(JSON.stringify(book));
+          });
         }else{
           read(function (books) {
-            res.end(JSON.stringify(books))
+            res.end(JSON.stringify(books.reverse()))
           });
         }
         break;
@@ -57,6 +60,14 @@ http.createServer(function (req,res) {
       case 'PUT'://返回修改的那一项
         break;
       case 'DELETE': //返回空对象
+        if(id){
+          read(function (books) {
+            books = books.filter(book=>book.id!=id); // 注意路径的id是字符串类型
+            write(books,function () {
+              res.end(JSON.stringify({}));
+            });
+          });
+        }
         break;
     }
   }
