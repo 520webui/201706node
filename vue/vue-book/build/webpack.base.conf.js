@@ -9,7 +9,7 @@ function resolve (dir) { //__dirname
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: './vuex-use/main.js'
   },
   output: {
     path: config.build.assetsRoot,
