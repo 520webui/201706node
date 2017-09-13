@@ -9,6 +9,11 @@ Vue.use(VueAwesomeSwiper);
 //导入swiper的样式
 import 'swiper/dist/css/swiper.min.css';
 
+//全局过滤器
+Vue.filter('currency',function (input) { //input代表的是管道符前面的值
+    return '$'+parseFloat(input).toFixed(2);
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
