@@ -13,6 +13,13 @@ import 'swiper/dist/css/swiper.min.css';
 Vue.filter('currency',function (input) { //input代表的是管道符前面的值
     return '$'+parseFloat(input).toFixed(2);
 });
+import VueLazyload from 'vue-lazyload' //导入懒加载插件
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  loading: 'http://cdn.uehtml.com/201402/1392662524764_1140x0.gif',
+  attempt: 1
+});
+
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,7 +1,10 @@
 <template>
-  <div class="spinner">
-    <div class="dot1"></div>
-    <div class="dot2"></div>
+  <div class="loading">
+    <div class='loader loader--audioWave'></div>
+    <div class='loader loader--snake'></div>
+    <div class='loader loader--spinningDisc'></div>
+    <div class='loader loader--glisteningWindow'></div>
+    <div class='loader loader--circularSquare'></div>
   </div>
 </template>
 <script>
@@ -18,53 +21,41 @@
     }
 </script>
 <style scoped>
-  .spinner {
-    margin: 100px auto;
-    width: 90px;
-    height: 90px;
-    position: relative;
-    text-align: center;
-
-    -webkit-animation: rotate 2.0s infinite linear;
-    animation: rotate 2.0s infinite linear;
+  .loading{width: 100%;position: absolute;left: 50%; margin-left: -20px;}
+  .loader--audioWave {
+    width: 3em;
+    height: 2em;
+    background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+    background-repeat: no-repeat;
+    background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+    animation: audioWave 1.5s linear infinite;
   }
-
-  .dot1, .dot2 {
-    width: 60%;
-    height: 60%;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    background-color: #67CF22;
-    border-radius: 100%;
-
-    -webkit-animation: bounce 2.0s infinite ease-in-out;
-    animation: bounce 2.0s infinite ease-in-out;
-  }
-
-  .dot2 {
-    top: auto;
-    bottom: 0px;
-    -webkit-animation-delay: -1.0s;
-    animation-delay: -1.0s;
-  }
-
-  @-webkit-keyframes rotate { 100% { -webkit-transform: rotate(360deg) }}
-  @keyframes rotate { 100% { transform: rotate(360deg); -webkit-transform: rotate(360deg) }}
-
-  @-webkit-keyframes bounce {
-    0%, 100% { -webkit-transform: scale(0.0) }
-    50% { -webkit-transform: scale(1.0) }
-  }
-
-  @keyframes bounce {
-    0%, 100% {
-      transform: scale(0.0);
-      -webkit-transform: scale(0.0);
-    } 50% {
-        transform: scale(1.0);
-        -webkit-transform: scale(1.0);
-      }
+  @keyframes audioWave {
+    25% {
+      background: linear-gradient(#3498db, #3498db) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+      background-repeat: no-repeat;
+      background-size: 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+    }
+    37.5% {
+      background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#3498db, #3498db) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+      background-repeat: no-repeat;
+      background-size: 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em;
+    }
+    50% {
+      background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#3498db, #3498db) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+      background-repeat: no-repeat;
+      background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em, 0.5em 0.25em;
+    }
+    62.5% {
+      background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#3498db, #3498db) 1.875em 50%, linear-gradient(#9b59b6, #9b59b6) 2.5em 50%;
+      background-repeat: no-repeat;
+      background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em, 0.5em 0.25em;
+    }
+    75% {
+      background: linear-gradient(#9b59b6, #9b59b6) 0 50%, linear-gradient(#9b59b6, #9b59b6) 0.625em 50%, linear-gradient(#9b59b6, #9b59b6) 1.25em 50%, linear-gradient(#9b59b6, #9b59b6) 1.875em 50%, linear-gradient(#3498db, #3498db) 2.5em 50%;
+      background-repeat: no-repeat;
+      background-size: 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 0.25em, 0.5em 2em;
+    }
   }
 </style>
 
