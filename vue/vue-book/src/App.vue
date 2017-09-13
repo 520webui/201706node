@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <transition name="slide">
+      <keep-alive>
+        <!--keep-alive可以解决缓存问题，不会在调用created方法-->
+        <router-view style="position: absolute;width: 100%;top: 0;left: 0"></router-view>
+      </keep-alive>
+    </transition>
     <navbar></navbar>
   </div>
 </template>
@@ -15,10 +20,23 @@ export default {
 }
 </script>
 <style lang="stylus">
+  #app
+    width 100%
+    height 100%
+  .slide-enter{
+    transform translateX(100%);
+  }
+  .slide-enter-active{
+    transition all 0.4s
+  }
+  .slide-leave-active{
+    opacity 0
+    transition all 0.3s
+  }
   *
     margin 0
     padding 0
-    body,html
+    body,html,#app
       width 100%
       height 100%
       overflow hidden

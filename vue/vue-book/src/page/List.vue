@@ -45,6 +45,7 @@
 </script>
 <style scoped lang="stylus">
   .list
+    height 100%
     ul
       padding 1.5%
       li

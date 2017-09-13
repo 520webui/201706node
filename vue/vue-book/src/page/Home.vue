@@ -1,6 +1,6 @@
 <script src="../main.js"></script>
 <template>
-    <div>
+    <div class="home">
         <MHeader title="首页"></MHeader>
         <div class="scroll">
           <Swiper :data="sliders"></Swiper>
@@ -55,6 +55,8 @@
     }
 </script>
 <style scoped lang="stylus">
+  .home
+    height 100%
   h3
     padding-left 2%
     line-height 35px
