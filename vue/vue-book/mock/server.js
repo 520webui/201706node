@@ -10,6 +10,10 @@ function read(callback) { //用来读取book.json中的数据
       callback(JSON.parse(data));
   })
 }
+function write(data,callback) { //用来写入到json中的方法
+  fs.writeFile('./book.json',JSON.stringify(data),callback)
+}
+
 let sliders = require('./sliders');
 http.createServer(function (req,res) {
   let {pathname,query} = url.parse(req.url,true);
@@ -35,6 +39,20 @@ http.createServer(function (req,res) {
         }
         break;
       case 'POST': //返回增加的那一项
+        let str = '';
+        req.on('data',function (chunk) {
+          str+=chunk;
+        });
+        req.on('end',function () {
+          let modifyBook = JSON.parse(str);
+          read(function (books) {
+            modifyBook.id = books.length>0?books[books.length-1].id+1:1;
+            books.push(modifyBook);
+            write(books,function () {
+              res.end(JSON.stringify(modifyBook));
+            })
+          });
+        });
         break;
       case 'PUT'://返回修改的那一项
         break;

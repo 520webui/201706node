@@ -19,6 +19,8 @@ Vue.use(VueLazyload, {
   loading: 'http://cdn.uehtml.com/201402/1392662524764_1140x0.gif',
   attempt: 1
 });
+// 导入bootstrap
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 /* eslint-disable no-new */

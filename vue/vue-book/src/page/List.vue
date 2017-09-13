@@ -38,6 +38,9 @@
               });
             }
         },
+        activated(){ //当你使用keep-alive 切换路由时依然会走这个函数
+          this.getList(); //不缓存的内容可以在这里重新获取
+        },
         computed: {},
         mounted(){
         }
