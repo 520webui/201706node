@@ -58,7 +58,26 @@ http.createServer(function (req,res) {
         });
         break;
       case 'PUT'://返回修改的那一项
-
+      {
+        let str = '';
+        req.on('data',function (chunk) {
+          str+=chunk;
+        });
+        req.on('end',function () {
+          let bookItem = JSON.parse(str);
+          read(function (books) {
+            books = books.map(book=>{
+              if(book.id == id){
+                return bookItem
+              }
+              return book;
+            });
+            write(books,function () {
+              res.end(JSON.stringify(bookItem));
+            });
+          });
+        });
+      }
         break;
       case 'DELETE': //返回空对象
         if(id){
