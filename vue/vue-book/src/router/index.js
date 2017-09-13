@@ -11,7 +11,8 @@ Vue.use(Router); //将router中的内容router-link router-view 注册了全局�
 export default new Router({
   routes: [
     {path:'/home',component:Home},
-    {path:'/detail',component:Detail},
+    // this.$route.params.bid
+    {path:'/detail/:bid',component:Detail,name:'detail'},
     {path:'/list',component:List},
     {path:'/add',component:Add},
     {path:'*',redirect:'/home'} //如果文件找不到跳转到首页

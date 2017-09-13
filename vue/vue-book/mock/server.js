@@ -58,6 +58,7 @@ http.createServer(function (req,res) {
         });
         break;
       case 'PUT'://返回修改的那一项
+
         break;
       case 'DELETE': //返回空对象
         if(id){

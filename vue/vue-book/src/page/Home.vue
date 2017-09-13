@@ -29,6 +29,9 @@
                 isLoading:true
             }
         },
+        activated(){
+          this.getHot();
+        },
         created(){
             this.getSliders();
             this.getHot();
