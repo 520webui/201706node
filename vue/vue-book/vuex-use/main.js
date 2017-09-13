@@ -11,10 +11,18 @@ let state = {number:1};
 // 5.mutation
 let mutations = {
   add(state,num){ //第一个参数就是当前容器的状态
-    state.number+=num;
+      state.number+=num;
   },
   minus(state,num){
     state.number-=num;
+  }
+};
+//7.actions处理异步
+let actions = {
+  add({commit},num){
+    setTimeout(()=>{
+      commit('add',num)
+    },3000)
   }
 };
 //6.getters计算
@@ -25,7 +33,8 @@ let getters = {
 let store = new Vuex.Store({
     state,
     mutations,
-    getters
+    getters,
+    actions
 });
 new Vue({
   el:'#app',

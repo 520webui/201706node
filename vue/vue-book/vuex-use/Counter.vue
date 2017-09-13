@@ -17,7 +17,7 @@
         methods: {
             // payload 载荷
             max(){
-              this.$store.commit('add',2);
+              this.$store.dispatch('add',2);
             },
             min(){
               this.$store.commit('minus',1)
