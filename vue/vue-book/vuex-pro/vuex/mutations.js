@@ -1,11 +1,11 @@
- import * as Types from './mutation-types';
+import * as Types from './mutation-types';
 
 const mutations = {
-  [Types.INCREMENT](state){
-    state.number++;
+  [Types.INCREMENT](state,num){
+    state.number+=num;
   },
-  [Types.DECREMENT](state){
-    state.number--;
+  [Types.DECREMENT](state,num){
+    state.number-=num;
   }
 };
 export default mutations;
