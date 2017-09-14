@@ -20,7 +20,7 @@
               this.$store.dispatch('add',2);
             },
             min(){
-              this.$store.commit('minus',1)
+              this.$store.commit('minus',1);
             }
         },
         computed: {

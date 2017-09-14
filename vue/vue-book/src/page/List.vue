@@ -10,7 +10,7 @@
                 <h4>{{book.bookName}}</h4>
                 <p>{{book.bookInfo}}</p>
                 <strong>{{book.bookPrice | currency}}</strong>
-                <button class="btn btn-danger" @click="remove(book.id)">删除</button>
+                <button class="btn btn-danger" @click.prevent="remove(book.id)">删除</button>
               </div>
             </router-link>
           </ul>
